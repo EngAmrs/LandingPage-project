@@ -89,6 +89,10 @@ section {
     color: #162B4E;
 }
 
+.navbar__menu .btnActive{
+    color: #162B4E;
+}
+
 .navbar__menu .menu__link {
     display: block;
     padding: 1em;

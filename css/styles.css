@@ -72,6 +72,21 @@ section {
 
 .navbar__menu li {
     display: inline-block;
+    padding: 25px;
+
+}
+
+.navbar__menu li a{
+    text-decoration: none;
+    color: #999;
+    font-weight: bold;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.navbar__menu li a:hover{
+
+    color: #162B4E;
 }
 
 .navbar__menu .menu__link {

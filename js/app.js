@@ -1,51 +1,45 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
-
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
 
 /**
  * Define Global Variables
  * 
 */
+const getSections = document.getElementsByTagName("main")[0].querySelectorAll("section");
+const getNavItems = document.getElementById("navbar__list");
 
 
 /**
  * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
  * Begin Main Functions
  * 
 */
 
-// build the nav
+//Iterate on each section and add it to the nav
+const Navbar = function BuildNAv (){
+    for (const i in getSections) {
+        if (Object.hasOwnProperty.call(getSections, i)) {
+            const SectionId = getSections[i].id;
+            const getNavData = getSections[i].getAttribute("data-nav");
 
-
+            getNavItems.innerHTML += `<li><a data-SectionId="#${SectionId}">${getNavData}</a></li>`
+            
+        }
+    }
+}
 // Add class 'active' to section when near top of viewport
 
-
 // Scroll to anchor ID using scrollTO event
+function smoothScroll(e){
+    getSectionId = e.target.getAttribute('data-SectionId');
+    if(getSectionId){
+        getSectionOffset = document.querySelector(getSectionId).offsetTop;
 
+        //Window scroll
+        window.scrollTo({
+            top: getSectionOffset,
+            behavior: 'smooth'
+        });
+    }
+}
 
 /**
  * End Main Functions
@@ -54,8 +48,9 @@
 */
 
 // Build menu 
-
+window.onload = Navbar;
 // Scroll to section on link click
+getNavItems.addEventListener('click', smoothScroll);
 
 // Set sections as active
 

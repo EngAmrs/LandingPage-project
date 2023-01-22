@@ -27,7 +27,7 @@ const Navbar = function BuildNAv (){
 }
 // Add class 'active' to section when near top of viewport
 
-function activeClass() {
+function makeActive() {
     
     //For the nav buttons
     let index = 0
@@ -37,11 +37,11 @@ function activeClass() {
           const sectionTop = targetSection.getBoundingClientRect();
           
           if (sectionTop.top >= 0 && sectionTop.top < 300) {
-              targetSection.setAttribute('class','active');
-              getNavItems.getElementsByTagName("a")[index].setAttribute('class', 'btnActive');
+              targetSection.classList.add('active');
+              getNavItems.getElementsByTagName("a")[index].classList.add('btnActive');
           } else {
-              targetSection.removeAttribute('class');
-              getNavItems.getElementsByTagName("a")[index].removeAttribute('class', 'btnActive');
+              targetSection.classList.remove('active');
+              getNavItems.getElementsByTagName("a")[index].classList.remove('btnActive');
               
           }
           index++
@@ -74,4 +74,4 @@ window.onload = Navbar;
 getNavItems.addEventListener('click', smoothScroll);
 
 // Set sections as active
-window.addEventListener('scroll', activeClass);
+window.addEventListener('scroll', makeActive);

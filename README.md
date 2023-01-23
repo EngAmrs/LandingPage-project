@@ -1,6 +1,10 @@
-# Requirements
+#Landing Page
+[![Javascript version][ES6]](#)
 
-## Landing page adding functionalities which are:
+
+## Requirements
+
+### Landing page adding functionalities which are:
   * Iterate on each section and add it to the nav by JS (Dynamic)
   * Add class 'active' to section when near top of viewport
   * Scroll to anchor ID smoothly
@@ -25,6 +29,6 @@ It will be smoothly moveTo the section.
 ```
 
 
-### Using ScrollTo event for adding class (classList) to the section, for the future maintenance.
+#### Using ScrollTo event for adding class (classList) to the section, for the future maintenance.
 
 

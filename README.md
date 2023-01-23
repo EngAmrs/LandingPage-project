@@ -1,5 +1,6 @@
-#Landing Page
-[![Javascript version][ES6]](#)
+# Landing Page
+> This syntax was
+> introduced in Javascript ES6
 
 
 ## Requirements
